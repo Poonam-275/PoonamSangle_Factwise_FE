@@ -1,0 +1,138 @@
+.tic-tac-toe {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.status {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #4a5568;
+  min-height: 36px;
+}
+
+.board {
+  display: inline-block;
+  border: 3px solid #333;
+  border-radius: 10px;
+  padding: 10px;
+  background: #f7fafc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.board-row {
+  display: flex;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border: 2px solid #333;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin: 2px;
+  border-radius: 5px;
+}
+
+.cell:hover:not(.filled):not(:disabled) {
+  background: #e2e8f0;
+  transform: scale(1.05);
+}
+
+.cell:disabled {
+  cursor: not-allowed;
+}
+
+.cell.filled {
+  cursor: default;
+}
+
+.cell.x {
+  color: #e53e3e;
+}
+
+.cell.o {
+  color: #3182ce;
+}
+
+.controls {
+  margin: 30px 0;
+}
+
+.reset-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reset-btn:hover {
+  background: #3182ce;
+}
+
+.history {
+  margin-top: 30px;
+  text-align: left;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.history h3 {
+  margin-top: 0;
+  color: #4a5568;
+}
+
+.history ol {
+  padding-left: 20px;
+}
+
+.history li {
+  margin: 10px 0;
+}
+
+.history button {
+  padding: 8px 16px;
+  background: #edf2f7;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.history button:hover {
+  background: #e2e8f0;
+}
+
+.history .current-move {
+  background: #bee3f8;
+  font-weight: bold;
+}
+
+/* Animation for winner cells */
+@keyframes winner-glow {
+  0% { background-color: #fefcbf; }
+  50% { background-color: #f6e05e; }
+  100% { background-color: #fefcbf; }
+}
+
+.winner-cell {
+  animation: winner-glow 1s infinite;
+}
